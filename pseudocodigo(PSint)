@@ -1,0 +1,35 @@
+Proceso CompraEstudiante 
+    Definir nombre Como Cadena 
+    Definir cantidad, precioUnitario, subtotal, descuento, total, pago, cambio, falta Como Real 
+ 
+    Escribir "===== DATOS DEL CLIENTE =====" 
+    Escribir "Ingrese el nombre del cliente: " 
+    Leer nombre 
+    Escribir "Ingrese la cantidad de unidades: " 
+    Leer cantidad 
+    Escribir "Ingrese el precio unitario: " 
+    Leer precioUnitario 
+ 
+    subtotal = cantidad * precioUnitario 
+    descuento = subtotal * 0.10 
+    total = subtotal - descuento 
+ 
+    Escribir "===== RESUMEN DE COMPRA =====" 
+    Escribir "Cliente: ", nombre 
+    Escribir "Subtotal: ", subtotal 
+    Escribir "Descuento (10%): ", descuento 
+    Escribir "Total a pagar: ", total 
+ 
+    Escribir "Ingrese el monto con el que paga: " 
+    Leer pago 
+ 
+    Si pago >= total Entonces 
+        cambio = pago - total 
+        Escribir "Pago aceptado." 
+        Escribir "Su cambio es: ", cambio 
+    SiNo 
+        falta = total - pago 
+        Escribir "Dinero insuficiente." 
+        Escribir "Le falta: ", falta 
+    FinSi 
+FinProceso 
